@@ -3,6 +3,28 @@ using namespace std;
 
 int pilih;
 
+void menu1() {
+  cout << "\033[0;0H\033[2J"; // alternatif system("cls");
+  
+  cout << "1. Persegi Panjang" << endl;
+  cout << "2. Persegi" << endl;
+  cout << "3. Segitiga" << endl;
+  cout << "4. Lingkaran" << endl;
+  cout << "5. Jajar Genjang" << endl;
+  cout << "6. Belah Ketupat" << endl;
+  cout << "7. Trapesium" << endl;
+  cout << "8. Kembali ke menu utama" << endl;
+  
+  cout << "\nPilih Menu : " << endl;
+  cin >> pilih;
+
+  switch(pilih) {
+    case 1 :
+      
+    break;
+  }
+}
+
 int main() {
   cout << "Projek Alpro" << endl;
   cout << "Menu" << endl;
@@ -12,6 +34,20 @@ int main() {
   cout << "4. About" << endl;
   cout << "5. Exit" << endl;
 
-  cout << "Pilihan : ";
+  cout << "\nPilih Menu : ";
   cin >> pilih;
+
+  switch(pilih) {
+    case 1 : 
+      menu1();
+    break;
+    case 2 :
+    break;
+    case 3 :
+    break;
+    case 4 :
+    break;
+    case 5 :
+    break;
+  }
 }
