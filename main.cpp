@@ -34,7 +34,7 @@ void menu1() {
 
 // baris ini Khusus fungsi/prosedure menu 2
 void menu2() {
-  int p, l, t;
+  int p, l, t, alas, keliling;
   menu2 :
   
   cout << "\033[0;0H\033[2J"; // alternatif system("cls");
@@ -123,6 +123,39 @@ void menu2() {
     break;
     // prisma segitiga (volume dan luas permukaan)
     case 3 : 
+      cout << "\033[0;0H\033[2J"; // alternatif system("cls");
+
+      cout << "Pilih menu yang diinginkan : " << endl;
+      cout << "1. Menghitung volume dan luas permukaan prisma segitiga" << endl;
+      cout << "3. Kembali ke menu 2" << endl;
+
+      cout << "\nPilih menu : ";
+      cin >> pilih;
+
+      switch(pilih) {
+        case 1 :
+          cout << "\033[0;0H\033[2J"; // alternatif system("cls");
+
+          cout << "Masukkan alas: ";
+          cin >> alas;
+
+          cout << "Masukkan tinggi : ";
+          cin >> t;
+
+          cout << "Masukkan keliling alas : ";
+          cin >> keliling;
+
+          cout << "\nVolume prisma segitiga adalah : " << (alas * t / 2) * t << endl;
+          cout << "Luas permukaan prismaa segitiga adalah : " << (2 * alas) + (keliling * t)<< endl;
+        break;
+        case 2 :
+          goto menu2;
+        break;
+        default :
+          cout << "Silakan pilih menu yang sesuai.";
+        break;
+      }
+
     break;
     // tabung (volume dan luas permukaan)
     case 4 :
