@@ -5,6 +5,7 @@ const int MAX_ROW = 100, MAX_COL = 100;
 // Sementara pakai variabel global dlu, kalo ada yg ngerti pass by pointer atau
 // pass by reference boleh diganti. Kata bu wilis harus pakai itu soalnya 😅😅😅
 int pilih;
+char kembali;
 
 void menu1() {
 
@@ -30,8 +31,10 @@ void menu1() {
   case 1:
     cout << "Persegi Panjang \n" << endl;
     cout << "\n";
-    cout << "Masukkan Panjang : "; cin >> p;
-    cout << "Masukkan Lebar   : "; cin >> l;
+    cout << "Masukkan Panjang : ";
+    cin >> p;
+    cout << "Masukkan Lebar   : ";
+    cin >> l;
     cout << "---------------------";
     cout << "\n";
     cout << "Luas :" << p * l << endl;
@@ -40,7 +43,8 @@ void menu1() {
   case 2:
     cout << "Persegi" << endl;
     cout << "\n";
-    cout << "Masukkan Sisi : "; cin >> p;
+    cout << "Masukkan Sisi : ";
+    cin >> p;
     cout << "---------------------";
     cout << "\n";
     cout << "Luas :" << p * p << endl;
@@ -52,29 +56,36 @@ void menu1() {
     cout << "1. Luas" << endl;
     cout << "2. Keliling " << endl;
     cout << "\n";
-    cout << "\nPilih Menu : "; cin >> ps;
+    cout << "\nPilih Menu : ";
+    cin >> ps;
     cout << "\n";
 
     if (ps == 1) {
-      cout << "Masukkan Alas : "; cin >> p;
-      cout << "Masukkan Tinggi   : "; cin >> l;
+      cout << "Masukkan Alas : ";
+      cin >> p;
+      cout << "Masukkan Tinggi   : ";
+      cin >> l;
       cout << "---------------------";
       cout << "\n";
-      cout << "Luas :" << (p * l) * 1 / 2 << endl;}
-      else if (ps == 2) {
-        cout << "Masukkan Sisi 1 : "; cin >> p;
-        cout << "Masukkan Sisi 2 : "; cin >> l;
-        cout << "Masukkan Sisi 3 : "; cin >> ps;
-        cout << "---------------------";
-        cout << "\n";
-        cout << "keliling :" << p + l + ps << endl;}
-        else
-          cout << "Menu tidak ditemukan" << endl;
-        break;
+      cout << "Luas :" << (p * l) * 1 / 2 << endl;
+    } else if (ps == 2) {
+      cout << "Masukkan Sisi 1 : ";
+      cin >> p;
+      cout << "Masukkan Sisi 2 : ";
+      cin >> l;
+      cout << "Masukkan Sisi 3 : ";
+      cin >> ps;
+      cout << "---------------------";
+      cout << "\n";
+      cout << "keliling :" << p + l + ps << endl;
+    } else
+      cout << "Menu tidak ditemukan" << endl;
+    break;
   case 4:
     cout << "Lingkaran" << endl;
     cout << "\n";
-    cout << "Masukkan Jari-Jari : "; cin >> r;
+    cout << "Masukkan Jari-Jari : ";
+    cin >> r;
     cout << "---------------------";
     cout << "\n";
     cout << "Luas :" << PHI * r * r << endl;
@@ -83,8 +94,10 @@ void menu1() {
   case 5:
     cout << "Jajar Genjang" << endl;
     cout << "\n";
-    cout << "Masukkan Alas : "; cin >> p;    
-    cout << "Masukkan Tinggi   : "; cin >> l;
+    cout << "Masukkan Alas : ";
+    cin >> p;
+    cout << "Masukkan Tinggi   : ";
+    cin >> l;
     cout << "---------------------";
     cout << "\n";
     cout << "Luas :" << p * l << endl;
@@ -94,10 +107,13 @@ void menu1() {
     cout << "Belah Ketupat" << endl;
     cout << "\n";
     cout << "-Luas-\n";
-    cout << "Masukkan D-1 : "; cin >> p;
-    cout << "Masukkan D-2 : "; cin >> l;
+    cout << "Masukkan D-1 : ";
+    cin >> p;
+    cout << "Masukkan D-2 : ";
+    cin >> l;
     cout << "-Keliling-\n";
-    cout << "Masukkan Sisi: "; cin >> ps;
+    cout << "Masukkan Sisi: ";
+    cin >> ps;
     cout << "---------------------";
     cout << "\n";
     cout << "Luas :" << p * l * 1 / 2 << endl;
@@ -106,265 +122,123 @@ void menu1() {
   case 7:
     cout << "Trapesium" << endl;
     cout << "\n";
-    cout << "Masukkan tinggi    : "; cin >> p;
-    cout << "Masukkan sisi bawah: "; cin >> l;
-    cout << "Masukkan Sisi atas : "; cin >> ps;
-    cout << "Masukkan sisi miring 1: "; cin >> p1;
-    cout << "Masukkan sisi miring 2: "; cin >> p2;
+    cout << "Masukkan tinggi    : ";
+    cin >> p;
+    cout << "Masukkan sisi bawah: ";
+    cin >> l;
+    cout << "Masukkan Sisi atas : ";
+    cin >> ps;
+    cout << "Masukkan sisi miring 1: ";
+    cin >> p1;
+    cout << "Masukkan sisi miring 2: ";
+    cin >> p2;
     cout << "---------------------";
     cout << "\n";
     cout << "Luas :" << ((ps + l) * 1 / 2) * p << endl;
     cout << "keliling :" << l + ps + p1 + p2 << endl;
     break;
   case 8:
-    //balik (how?)
+    // balik (how?)
   default:
     cout << "Menu tidak ditemukan" << endl;
   }
 }
-// baris ini Khusus fungsi/prosedure menu 2
+// baris ini Khusus fungsi/prosedure di menu 2
 void kubus() {
-  
+  float p;
+  cout << "\033[0;0H\033[2J"; // alternatif system("cls");
+
+  cout << "Masukkan panjang sisi : ";
+  cin >> p;
+
+  cout << "\nVolume kubus adalah : " << p * p * p << endl;
+
+  cout << "Luas Permukaan kubus adalah : " << 6 * p * p << endl;
+
+  cout << "\nKembali ke menu sebelumnya? (y/n) : ";
+  cin >> kembali;
 }
 
-void menu2() {
-  float p, l, t, r, alas, keliling; // kenapa ngga float aja?
+void balok() {
+  float p, l, t;
+  cout << "\033[0;0H\033[2J"; // alternatif system("cls");
+
+  cout << "Masukkan panjang : ";
+  cin >> p;
+
+  cout << "Masukkan lebar : ";
+  cin >> l;
+
+  cout << "Masukkan tinggi : ";
+  cin >> t;
+
+  cout << "\nVolume balok adalah : " << p * l * t << endl;
+
+  cout << "Luas permukaan balok adalah : " << 2 * (p * l + p * t + l * t)
+       << endl;
+
+  cout << "\nKembali ke menu sebelumnya? (y/n) : ";
+  cin >> kembali;
+}
+
+void prisma() {
+  float alas, t, keliling;
+  cout << "\033[0;0H\033[2J"; // alternatif system("cls");
+
+  cout << "Masukkan alas: ";
+  cin >> alas;
+
+  cout << "Masukkan tinggi : ";
+  cin >> t;
+
+  cout << "Masukkan keliling alas : ";
+  cin >> keliling;
+
+  cout << "\nVolume prisma segitiga adalah : " << (alas * t / 2) * t << endl;
+
+  cout << "Luas permukaan prisma segitiga adalah : "
+       << (2 * alas) + (keliling * t) << endl;
+
+  cout << "\nKembali ke menu sebelumnya? (y/n) : ";
+  cin >> kembali;
+}
+
+void tabung() {
+  float r, t;
   float PHI = 3.14;
-menu2:
+  cout << "\033[0;0H\033[2J"; // alternatif system("cls");
+
+  cout << "Masukkan jari-jari : ";
+  cin >> r;
+  cout << "Masukkan tinggi : ";
+  cin >> t;
+
+  cout << "\nVolume tabung adalah : " << PHI * r * r * t << endl;
+
+  cout << "Luas Permukaan tabung adalah : " << 2.0 * PHI * r * (r + t) << endl;
+
+  cout << "\nKembali ke menu sebelumnya? (y/n) : ";
+  cin >> kembali;
+}
+
+void bola() {
+  float r;
+  float PHI = 3.14;
 
   cout << "\033[0;0H\033[2J"; // alternatif system("cls");
 
-  cout << "Selamat datang di menu 2 (Bangunan tiga dimensi)\n" << endl;
+  cout << "Masukkan jari-jari : ";
+  cin >> r;
 
-  cout << "1. Kubus" << endl;
-  cout << "2. Balok" << endl;
-  cout << "3. Prisma segitiga" << endl;
-  cout << "4. Tabung" << endl;
-  cout << "5. Bola" << endl;
-  cout << "6. Kembali ke menu utama" << endl;
+  cout << "\nVolume bola adalah : " << 4.0 / 3.0 * PHI * r * r * r << endl;
 
-  cout << "\nPilih Menu : ";
-  cin >> pilih;
+  cout << "Luas Permukaan bola adalah : " << 4.0 * PHI * r * r << endl;
 
-  switch (pilih) {
-  case 1:                       // kubus
-    cout << "\033[0;0H\033[2J"; // alternatif system("cls");
-
-    cout << "Pilih menu yang diinginkan : " << endl;
-    cout << "1. Menghitung volume kubus" << endl;
-    cout << "2. Menghitung luas Permukaan kubus" << endl;
-    cout << "3. Kembali ke menu 2" << endl;
-
-    cout << "\nPilih menu : ";
-    cin >> pilih;
-
-    switch (pilih) {
-    case 1:
-      cout << "\033[0;0H\033[2J"; // alternatif system("cls");
-
-        cout << "Masukkan panjang sisi : ";
-        cin >> p;
-
-        cout << "Volume kubus adalah : " << p * p * p << endl;
-        break;
-      case 2:
-        cout << "Masukkan panjang sisi : ";
-        cin >> p;
-
-        cout << "Luas Permukaan kubus adalah : " << 6 * p * p << endl;
-        break;
-      case 3:
-        goto menu2;
-        break;
-      default:
-        cout << "Silakan pilih menu yang sesuai.";
-        break;
-      }
-      break;
-  // balok volume dan luas permukaan)
-  case 2:
-    cout << "\033[0;0H\033[2J"; // alternatif system("cls");
-
-    cout << "Pilih menu yang diinginkan : " << endl;
-    cout << "1. Menghitung volume balok" << endl;
-    cout << "2. Menghitung luas permukaan balok" << endl;
-    cout << "3. Kembali ke menu 2" << endl;
-
-    cout << "\nPilih menu : ";
-    cin >> pilih;
-
-    switch (pilih) {
-    case 1:
-      cout << "\033[0;0H\033[2J"; // alternatif system("cls");
-
-      cout << "Masukkan panjang : ";
-      cin >> p;
-
-      cout << "Masukkan lebar : ";
-      cin >> l;
-
-      cout << "Masukkan tinggi : ";
-      cin >> t;
-
-      cout << "\nVolume balok adalah : " << p * l * t << endl;
-      break;
-    case 2:
-      cout << "\033[0;0H\033[2J"; // alternatif system("cls");
-
-      cout << "Masukkan panjang : ";
-      cin >> p;
-
-      cout << "Masukkan lebar : ";
-      cin >> l;
-
-      cout << "Masukkan tinggi : ";
-      cin >> t;
-
-      cout << "Luas permukaan balok adalah : " << 2 * (p * l + p * t + l * t)
-           << endl;
-      break;
-    case 3:
-      goto menu2;
-      break;
-    default:
-      cout << "Silakan pilih menu yang sesuai.";
-      break;
-    }
-    break;
-  // prisma segitiga (volume dan luas permukaan)
-  case 3:
-    cout << "\033[0;0H\033[2J"; // alternatif system("cls");
-
-    cout << "Pilih menu yang diinginkan : " << endl;
-    cout << "1. Menghitung volume dan luas permukaan prisma segitiga" << endl;
-    cout << "3. Kembali ke menu 2" << endl;
-
-    cout << "\nPilih menu : ";
-    cin >> pilih;
-
-    switch (pilih) {
-    case 1:
-      cout << "\033[0;0H\033[2J"; // alternatif system("cls");
-
-      cout << "Masukkan alas: ";
-      cin >> alas;
-
-      cout << "Masukkan tinggi : ";
-      cin >> t;
-
-      cout << "Masukkan keliling alas : ";
-      cin >> keliling;
-
-      cout << "\nVolume prisma segitiga adalah : " << (alas * t / 2) * t
-           << endl;
-      break;
-    case 2:
-      cout << "\033[0;0H\033[2J"; // alternatif system("cls");
-
-      cout << "Masukkan alas: ";
-      cin >> alas;
-
-      cout << "Masukkan tinggi : ";
-      cin >> t;
-
-      cout << "Masukkan keliling alas : ";
-      cin >> keliling;
-
-      cout << "Luas permukaan prisma segitiga adalah : "
-           << (2 * alas) + (keliling * t) << endl;
-      break;
-    case 3:
-      goto menu2;
-      break;
-    default:
-      cout << "Silakan pilih menu yang sesuai.";
-      break;
-    }
-
-    break;
-  // tabung (volume dan luas permukaan)
-  case 4:
-    cout << "\033[0;0H\033[2J"; // alternatif system("cls");
-
-    cout << "Pilih menu yang diinginkan : " << endl;
-    cout << "1. Menghitung volume tabung" << endl;
-    cout << "2. Menghitung luas Permukaan tabung" << endl;
-    cout << "3. Kembali ke menu 2" << endl;
-
-    cout << "\nPilih menu : ";
-    cin >> pilih;
-
-    switch (pilih) {
-    case 1:
-      cout << "\033[0;0H\033[2J"; // alternatif system("cls");
-
-      cout << "Masukkan jari-jari : ";
-      cin >> r;
-      cout << "Masukkan tinggi : ";
-      cin >> t;
-
-      cout << "Volume tabung adalah : " << PHI * r * r * t << endl;
-      break;
-    case 2:
-      cout << "Masukkan jari-jari : ";
-      cin >> r;
-      cout << "Masukkan tinggi : ";
-      cin >> t;
-
-      cout << "Luas Permukaan tabung adalah : " << 2.0 * PHI * r * (r + t)
-           << endl;
-      break;
-    case 3:
-      goto menu2;
-      break;
-    default:
-      cout << "Silakan pilih menu yang sesuai.";
-      break;
-    }
-    break;
-  // bola (volume dan luas permukaan)
-  case 5:
-    cout << "\033[0;0H\033[2J"; // alternatif system("cls");
-
-    cout << "Pilih menu yang diinginkan : " << endl;
-    cout << "1. Menghitung volume bola" << endl;
-    cout << "2. Menghitung luas Permukaan bola" << endl;
-    cout << "3. Kembali ke menu 2" << endl;
-
-    cout << "\nPilih menu : ";
-    cin >> pilih;
-
-    switch (pilih) {
-    case 1:
-      cout << "\033[0;0H\033[2J"; // alternatif system("cls");
-
-      cout << "Masukkan jari-jari : ";
-      cin >> r;
-
-      cout << "Volume bola adalah : " << 4.0 / 3.0 * PHI * r * r * r << endl;
-      break;
-    case 2:
-      cout << "Masukkan jari-jari : ";
-      cin >> r;
-
-      cout << "Luas Permukaan bola adalah : " << 4.0 * PHI * r * r << endl;
-      break;
-    case 3:
-      goto menu2;
-      break;
-    default:
-      cout << "Silakan pilih menu yang sesuai.";
-      break;
-    }
-    break;
-  // exit
-  case 6:
-    break;
-  default:
-    cout << "Silakan pilih menu yang sesuai.";
-    break;
-  }
+  cout << "\nKembali ke menu sebelumnya? (y/n) : ";
+  cin >> kembali;
 }
+
+void menu2() {}
 
 // Akhir dari fungsi/prosedure menu 2
 
@@ -491,6 +365,7 @@ void menu4() {
 // Akhir menu 4
 
 int main() {
+menuUtama:
   cout << "\033[0;0H\033[2J"; // alternatif system("cls");
 
   cout << "Projek Alpro" << endl;
@@ -508,13 +383,64 @@ int main() {
     menu1(); // Verrel
     break;
   case 2:
-    menu2(); // Luqmaan dan Raihan
+    do {
+
+      cout << "\033[0;0H\033[2J"; // alternatif system("cls");
+
+      cout << "Selamat datang di menu 2 (Bangunan tiga dimensi)\n" << endl;
+
+      cout << "1. Kubus" << endl;
+      cout << "2. Balok" << endl;
+      cout << "3. Prisma segitiga" << endl;
+      cout << "4. Tabung" << endl;
+      cout << "5. Bola" << endl;
+      cout << "6. Kembali ke menu utama" << endl;
+
+      cout << "\nPilih Menu : ";
+      cin >> pilih;
+
+      switch (pilih) {
+      case 1: // kubus
+        kubus();
+        break;
+      // balok volume dan luas permukaan)
+      case 2:
+        balok();
+        break;
+      // prisma segitiga (volume dan luas permukaan)
+      case 3:
+        prisma();
+        break;
+      // tabung (volume dan luas permukaan)
+      case 4:
+        tabung();
+        break;
+      // bola (volume dan luas permukaan)
+      case 5:
+        bola();
+        break;
+      // exit
+      case 6:
+        goto menuUtama;
+        break;
+      default:
+        cout << "Silakan pilih menu yang sesuai.";
+        break;
+      } // Luqmaan dan Raihan
+
+    } while (kembali == 'Y' or kembali == 'y');
     break;
   case 3:
     menu3(); // Ekin dan Bintang
     break;
   case 4:
     menu4();
+    cout << "\n Kembali ke menu utama? (y/n)";
+    cin >> kembali;
+
+    if (kembali == 'Y' or kembali == 'y') {
+      goto menuUtama;
+    }
     break;
   default:
     cout << "Silakan pilih menu yang sesuai.";
