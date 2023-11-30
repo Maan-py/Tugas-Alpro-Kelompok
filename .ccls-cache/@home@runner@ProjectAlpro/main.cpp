@@ -7,141 +7,154 @@ const int MAX_ROW = 100, MAX_COL = 100;
 int pilih;
 char kembali;
 
-void menu1() {
+void persegiPanjang() {
+  float p, l;
 
-  float p, l, r, ps, p1, p2;
-  float PHI = 3.14;
-
-  cout << "\033[0;0H\033[2J"; // alternatif system("cls");
+  cout << "Persegi Panjang \n" << endl;
   cout << "\n";
-  cout << "1. Persegi Panjang" << endl;
-  cout << "2. Persegi" << endl;
-  cout << "3. Segitiga" << endl;
-  cout << "4. Lingkaran" << endl;
-  cout << "5. Jajar Genjang" << endl;
-  cout << "6. Belah Ketupat" << endl;
-  cout << "7. Trapesium" << endl;
-  cout << "8. Kembali ke menu utama" << endl;
+  cout << "Masukkan Panjang : ";
+  cin >> p;
+  cout << "Masukkan Lebar   : ";
+  cin >> l;
+  cout << "---------------------";
+  cout << "\n";
+  cout << "Luas :" << p * l << endl;
+  cout << "keliling :" << (p * 2) + (l * 2) << endl;
 
+  cout << "\nKembali ke menu sebelumnya? (y/n) : ";
+  cin >> kembali;
+}
+
+void persegi() {
+  float p;
+
+  cout << "Persegi" << endl;
+  cout << "\n";
+  cout << "Masukkan Sisi : ";
+  cin >> p;
+  cout << "---------------------";
+  cout << "\n";
+  cout << "Luas :" << p * p << endl;
+  cout << "keliling :" << p * 4 << endl;
+
+  cout << "\nKembali ke menu sebelumnya? (y/n) : ";
+  cin >> kembali;
+}
+
+void segitiga() {
+  float p, l, ps;
+  cout << "Segitiga" << endl;
+  cout << "\n";
+  cout << "1. Luas" << endl;
+  cout << "2. Keliling " << endl;
+  cout << "\n";
   cout << "\nPilih Menu : ";
-  cin >> pilih;
+  cin >> ps;
   cout << "\n";
 
-  switch (pilih) {
-  case 1:
-    cout << "Persegi Panjang \n" << endl;
-    cout << "\n";
-    cout << "Masukkan Panjang : ";
-    cin >> p;
-    cout << "Masukkan Lebar   : ";
-    cin >> l;
-    cout << "---------------------";
-    cout << "\n";
-    cout << "Luas :" << p * l << endl;
-    cout << "keliling :" << (p * 2) + (l * 2) << endl;
-    break;
-  case 2:
-    cout << "Persegi" << endl;
-    cout << "\n";
-    cout << "Masukkan Sisi : ";
-    cin >> p;
-    cout << "---------------------";
-    cout << "\n";
-    cout << "Luas :" << p * p << endl;
-    cout << "keliling :" << p * 4 << endl;
-    break;
-  case 3:
-    cout << "Segitiga" << endl;
-    cout << "\n";
-    cout << "1. Luas" << endl;
-    cout << "2. Keliling " << endl;
-    cout << "\n";
-    cout << "\nPilih Menu : ";
-    cin >> ps;
-    cout << "\n";
-
-    if (ps == 1) {
-      cout << "Masukkan Alas : ";
-      cin >> p;
-      cout << "Masukkan Tinggi   : ";
-      cin >> l;
-      cout << "---------------------";
-      cout << "\n";
-      cout << "Luas :" << (p * l) * 1 / 2 << endl;
-    } else if (ps == 2) {
-      cout << "Masukkan Sisi 1 : ";
-      cin >> p;
-      cout << "Masukkan Sisi 2 : ";
-      cin >> l;
-      cout << "Masukkan Sisi 3 : ";
-      cin >> ps;
-      cout << "---------------------";
-      cout << "\n";
-      cout << "keliling :" << p + l + ps << endl;
-    } else
-      cout << "Menu tidak ditemukan" << endl;
-    break;
-  case 4:
-    cout << "Lingkaran" << endl;
-    cout << "\n";
-    cout << "Masukkan Jari-Jari : ";
-    cin >> r;
-    cout << "---------------------";
-    cout << "\n";
-    cout << "Luas :" << PHI * r * r << endl;
-    cout << "keliling :" << PHI * 2 * r << endl;
-    break;
-  case 5:
-    cout << "Jajar Genjang" << endl;
-    cout << "\n";
+  if (ps == 1) {
     cout << "Masukkan Alas : ";
     cin >> p;
     cout << "Masukkan Tinggi   : ";
     cin >> l;
     cout << "---------------------";
     cout << "\n";
-    cout << "Luas :" << p * l << endl;
-    cout << "keliling :" << 2 * (p + l) << endl;
-    break;
-  case 6:
-    cout << "Belah Ketupat" << endl;
-    cout << "\n";
-    cout << "-Luas-\n";
-    cout << "Masukkan D-1 : ";
+    cout << "Luas :" << (p * l) * 1 / 2 << endl;
+  } else if (ps == 2) {
+    cout << "Masukkan Sisi 1 : ";
     cin >> p;
-    cout << "Masukkan D-2 : ";
+    cout << "Masukkan Sisi 2 : ";
     cin >> l;
-    cout << "-Keliling-\n";
-    cout << "Masukkan Sisi: ";
+    cout << "Masukkan Sisi 3 : ";
     cin >> ps;
     cout << "---------------------";
     cout << "\n";
-    cout << "Luas :" << p * l * 1 / 2 << endl;
-    cout << "keliling :" << ps * 4 << endl;
-    break;
-  case 7:
-    cout << "Trapesium" << endl;
-    cout << "\n";
-    cout << "Masukkan tinggi    : ";
-    cin >> p;
-    cout << "Masukkan sisi bawah: ";
-    cin >> l;
-    cout << "Masukkan Sisi atas : ";
-    cin >> ps;
-    cout << "Masukkan sisi miring 1: ";
-    cin >> p1;
-    cout << "Masukkan sisi miring 2: ";
-    cin >> p2;
-    cout << "---------------------";
-    cout << "\n";
-    cout << "Luas :" << ((ps + l) * 1 / 2) * p << endl;
-    cout << "keliling :" << l + ps + p1 + p2 << endl;
-    break;
-  case 8:
-    // balik (how?)
-  default:
+    cout << "keliling :" << p + l + ps << endl;
+  } else {
     cout << "Menu tidak ditemukan" << endl;
   }
+
+  cout << "\nKembali ke menu sebelumnya? (y/n) : ";
+  cin >> kembali;
+}
+
+void lingkaran() {
+  float r;
+  float PHI = 3.14;
+  cout << "Lingkaran" << endl;
+  cout << "\n";
+  cout << "Masukkan Jari-Jari : ";
+  cin >> r;
+  cout << "---------------------";
+  cout << "\n";
+  cout << "Luas :" << PHI * r * r << endl;
+  cout << "keliling :" << PHI * 2 * r << endl;
+
+  cout << "\nKembali ke menu sebelumnya? (y/n) : ";
+  cin >> kembali;
+}
+
+void jajarGenjang() {
+  float p, l;
+  cout << "Jajar Genjang" << endl;
+  cout << "\n";
+  cout << "Masukkan Alas : ";
+  cin >> p;
+  cout << "Masukkan Tinggi   : ";
+  cin >> l;
+  cout << "---------------------";
+  cout << "\n";
+  cout << "Luas :" << p * l << endl;
+  cout << "keliling :" << 2 * (p + l) << endl;
+
+  cout << "\nKembali ke menu sebelumnya? (y/n) : ";
+  cin >> kembali;
+}
+
+void belahKetupat() {
+  float p, l, ps;
+
+  cout << "Belah Ketupat" << endl;
+  cout << "\n";
+  cout << "-Luas-\n";
+  cout << "Masukkan D-1 : ";
+  cin >> p;
+  cout << "Masukkan D-2 : ";
+  cin >> l;
+  cout << "-Keliling-\n";
+  cout << "Masukkan Sisi: ";
+  cin >> ps;
+  cout << "---------------------";
+  cout << "\n";
+  cout << "Luas :" << p * l * 1 / 2 << endl;
+  cout << "keliling :" << ps * 4 << endl;
+
+  cout << "\nKembali ke menu sebelumnya? (y/n) : ";
+  cin >> kembali;
+}
+
+void trapesium() {
+  float p, l, ps, p1, p2;
+
+  cout << "Trapesium" << endl;
+  cout << "\n";
+  cout << "Masukkan tinggi    : ";
+  cin >> p;
+  cout << "Masukkan sisi bawah: ";
+  cin >> l;
+  cout << "Masukkan Sisi atas : ";
+  cin >> ps;
+  cout << "Masukkan sisi miring 1: ";
+  cin >> p1;
+  cout << "Masukkan sisi miring 2: ";
+  cin >> p2;
+  cout << "---------------------";
+  cout << "\n";
+  cout << "Luas :" << ((ps + l) * 1 / 2) * p << endl;
+  cout << "keliling :" << l + ps + p1 + p2 << endl;
+
+  cout << "\nKembali ke menu sebelumnya? (y/n) : ";
+  cin >> kembali;
 }
 // baris ini Khusus fungsi/prosedure di menu 2
 void kubus() {
@@ -237,8 +250,6 @@ void bola() {
   cout << "\nKembali ke menu sebelumnya? (y/n) : ";
   cin >> kembali;
 }
-
-void menu2() {}
 
 // Akhir dari fungsi/prosedure menu 2
 
@@ -380,14 +391,59 @@ menuUtama:
 
   switch (pilih) {
   case 1:
-    menu1(); // Verrel
+    do {
+      cout << "\033[0;0H\033[2J"; // alternatif system("cls");
+      cout << "\n";
+      cout << "1. Persegi Panjang" << endl;
+      cout << "2. Persegi" << endl;
+      cout << "3. Segitiga" << endl;
+      cout << "4. Lingkaran" << endl;
+      cout << "5. Jajar Genjang" << endl;
+      cout << "6. Belah Ketupat" << endl;
+      cout << "7. Trapesium" << endl;
+      cout << "8. Kembali ke menu utama" << endl;
+
+      cout << "\nPilih Menu : ";
+      cin >> pilih;
+      cout << "\n";
+
+      switch (pilih) {
+      case 1:
+        persegiPanjang();
+        break;
+      case 2:
+        persegi();
+        break;
+      case 3:
+        segitiga();
+        break;
+      case 4:
+        lingkaran();
+        break;
+      case 5:
+        jajarGenjang();
+        break;
+      case 6:
+        belahKetupat();
+        break;
+      case 7:
+        trapesium();
+        break;
+      case 8:
+        // balik (how?)
+        goto menuUtama;
+      default:
+        cout << "Menu tidak ditemukan" << endl;
+      }
+
+    } while (kembali == 'Y' or kembali == 'y'); // Verrel
     break;
   case 2:
     do {
 
       cout << "\033[0;0H\033[2J"; // alternatif system("cls");
 
-      cout << "Selamat datang di menu 2 (Bangunan tiga dimensi)\n" << endl;
+      cout << "Selamat datang di menu 2!\n" << endl;
 
       cout << "1. Kubus" << endl;
       cout << "2. Balok" << endl;
@@ -435,7 +491,7 @@ menuUtama:
     break;
   case 4:
     menu4();
-    cout << "\n Kembali ke menu utama? (y/n)";
+    cout << "\nKembali ke menu utama? (y/n) ";
     cin >> kembali;
 
     if (kembali == 'Y' or kembali == 'y') {
