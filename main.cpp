@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-const int MAX_ROW = 100, MAX_COL = 100;
+// const int MAX_ROW = 100, MAX_COL = 100;
 
 // Sementara pakai variabel global dlu, kalo ada yg ngerti pass by pointer atau
 // pass by reference boleh diganti. Kata bu wilis harus pakai itu soalnya 😅😅😅
@@ -255,93 +255,93 @@ void bola() {
 
 // Fungsi/prosedure menu 3
 
-void menu3() {
-  int pilih;
+void perkalianMatriks() {
   int a, b, c, d;
-  int matriks1[MAX_COL][MAX_ROW], matriks2[MAX_COL][MAX_ROW],
-      perkalian12[MAX_COL][MAX_ROW];
 
   cout << "\033[0;0H\033[2J"; // alternatif system("cls");
-
-  cout << "1. Penjumlahan matriks" << endl;
-  cout << "2. Pengurangan matriks" << endl;
-  cout << "3. Perkalian matriks" << endl;
-  cout << "4. Transpose matriks" << endl;
-
-  cout << "\nPilih Menu : " << endl;
-  cin >> pilih;
-
-  // input ukuran matriks
-  cout << "\nMatriks 1 dengan ukuran a * b" << endl;
-  cout << "Input nilai a : ";
-  cin >> a;
-  cout << "Input nilai b : ";
-  cin >> b;
+  cout << "Perkalian 2 matriks (M * N)\n";
   cout << endl;
-  cout << "Matriks 2 dengan ukuran c * d" << endl;
-  cout << "Input nilai c : ";
+
+  cout << "Matriks M dengan ukuran a * b" << endl;
+  cout << "Input nilai a: ";
+  cin >> a;
+
+  cout << "Input nilai b: ";
+  cin >> b;
+
+  int m[a][b];
+
+  cout << endl;
+
+  cout << "Matriks N dengan ukuran c * d" << endl;
+  cout << "Input nilai c: ";
   cin >> c;
-  cout << "Input nilai d : ";
+
+  cout << "Input nilai d: ";
   cin >> d;
 
-  // input nilai matriks
-  cout << "\ninput matriks 1" << endl;
-  for (int i = 0; i < a; i++) {
-    for (int j = 0; j < b; j++) {
-      cout << "matriks 1 [" << i << "][" << j << "] : ";
-      cin >> matriks1[i][j];
-    }
-  }
-  cout << endl << "input matriks 2" << endl;
-  for (int k = 0; k < c; k++) {
-    for (int l = 0; l < d; l++) {
-      cout << "matriks 2 [" << k << "][" << l << "] : ";
-      cin >> matriks2[k][l];
-    }
-  }
+  int n[c][d];
 
-  // hasil inputan matriks
-  cout << endl << "hasil matriks 1" << endl;
-  for (int i = 0; i < a; i++) {
-    for (int j = 0; j < b; j++) {
-      cout << matriks1[i][j] << " ";
-    }
-    cout << endl;
-  }
-  cout << endl << "hasil matriks 2" << endl;
-  for (int k = 0; k < c; k++) {
-    for (int l = 0; l < d; l++) {
-      cout << matriks2[k][l] << " ";
-    }
-    cout << endl;
-  }
+  cout << endl;
 
-  switch (pilih) {
-  case 1:
-    // penjumlahan matriks
-    break;
-  case 2:
-    // pengurangan matriks
-    break;
-  case 3:
-    // perkalian matriks
-    if (a == d && b == c) {
-      cout << endl << "Hasil perkalian matriks :" << endl;
-      for (int i = 0; i < a; i++) {
-        for (int j = 0; j < c; j++) {
-          perkalian12[i][j] = matriks1[i][j] * matriks2[j][i];
-          cout << perkalian12[i][j] << " ";
-        }
-        cout << endl;
+  if (a * b == c * d) {
+    cout << "Input Matriks M" << endl;
+    for (int i = 0; i < a; i++) {
+      for (int j = 0; j < b; j++) {
+        cout << "Angka [" << i << "] [" << j << "] : ";
+        cin >> m[i][j];
       }
-    } else {
-      cout << "Perkalian matriks tidak bisa dilakukan!" << endl;
     }
-    break;
-  case 4:
-    // transpose matriks
-    break;
+
+    cout << endl;
+
+    cout << "Input Matriks N" << endl;
+    for (int i = 0; i < c; i++) {
+      for (int j = 0; j < d; j++) {
+        cout << "Angka [" << i << "] [" << j << "] : ";
+        cin >> n[i][j];
+      }
+    }
+
+    cout << endl;
+
+    cout << "Hasil Matriks M" << endl;
+    for (int i = 0; i < a; i++) {
+      for (int j = 0; j < b; j++) {
+        cout << m[i][j] << " ";
+      }
+      cout << endl;
+    }
+
+    cout << endl;
+
+    cout << "Hasil Matriks N" << endl;
+    for (int i = 0; i < c; i++) {
+      for (int j = 0; j < d; j++) {
+        cout << n[i][j] << " ";
+      }
+      cout << endl;
+    }
+
+    cout << endl;
+
+    cout << "Hasil Perkalian Matriks M dan N" << endl;
+    for (int i = 0; i < a; i++) {
+      for (int j = 0; j < d; j++) {
+        int hasil = 0;
+        for (int k = 0; k < b; k++) {
+          hasil += m[i][k] * n[k][j];
+        }
+        cout << hasil << " ";
+      }
+      cout << endl;
+    }
+  } else {
+    cout << "Perkalian matriks tidak mungkin dilakukan!" << endl;
   }
+
+  cout << "\nKembali ke menu sebelumnya? (y/n) : ";
+  cin >> kembali;
 }
 
 // Akhir fungsi/prosedur menu 3
@@ -440,7 +440,6 @@ menuUtama:
     break;
   case 2:
     do {
-
       cout << "\033[0;0H\033[2J"; // alternatif system("cls");
 
       cout << "Selamat datang di menu 2!\n" << endl;
@@ -487,7 +486,43 @@ menuUtama:
     } while (kembali == 'Y' or kembali == 'y');
     break;
   case 3:
-    menu3(); // Ekin dan Bintang
+    do {
+      cout << "\033[0;0H\033[2J"; // alternatif system("cls");
+
+      cout << "Selamat datang di menu 3!\n" << endl;
+
+      cout << "1. Perkalian matriks" << endl;
+      cout << "2. Penjumlahan matriks" << endl;
+      cout << "3. Pengurangan matriks" << endl;
+      cout << "4. Transpose matriks" << endl;
+      cout << "5. Kembali ke menu utama" << endl;
+
+      cout << "\nPilih Menu : ";
+      cin >> pilih;
+
+      switch (pilih) {
+      case 1:
+        perkalianMatriks();
+        break;
+      case 2:
+        // penjumlahanMatriks();
+        break;
+      case 3:
+        // penguranganMatriks();
+        break;
+      case 4:
+        // transposeMatriks();
+        break;
+      case 5:
+        goto menuUtama;
+        break;
+      default:
+        cout << "Silakan pilih menu yang sesuai.";
+        break;
+      }
+
+    } while (kembali == 'Y' or kembali == 'y');
+    // Ekin dan Bintang
     break;
   case 4:
     menu4();
