@@ -255,6 +255,7 @@ void bola() {
 
 // Fungsi/prosedure menu 3
 
+//perkalian matriks
 void perkalianMatriks() {
   int a, b, c, d;
 
@@ -338,6 +339,203 @@ void perkalianMatriks() {
     }
   } else {
     cout << "Perkalian matriks tidak mungkin dilakukan!" << endl;
+  }
+
+  cout << "\nKembali ke menu sebelumnya? (y/n) : ";
+  cin >> kembali;
+}
+
+//penjumlahan matriks
+void penjumlahanMatriks() {
+  int a, b, c, d;
+  int matriks1[10][10], matriks2[10][10], penjumlahan[10][10];
+
+  cout << "\033[0;0H\033[2J"; // alternatif system("cls");
+  cout << "Penjumlahan 2 Matriks\n\n";
+
+  //input ukuran matriks
+  cout << "\nMatriks 1 dengan ukuran a * b" << endl;
+  cout << "Input nilai a : "; cin >> a;
+  cout << "Input nilai b : "; cin >> b;
+  cout << endl;
+  cout << "Matriks 2 dengan ukuran c * d" << endl;
+  cout << "Input nilai c : "; cin >> c;
+  cout << "Input nilai d : "; cin >> d;
+
+  if (a==c && b==d) {
+    //input nilai matriks
+    cout << "\ninput matriks 1" << endl;
+    for(int i=0; i<a; i++) {
+      for(int j=0; j<b; j++) {
+        cout << "matriks 1 ["<<i<<"]["<<j<<"] : ";
+        cin >> matriks1 [i][j];
+      }
+    }
+    cout << endl << "input matriks 2" << endl;
+    for(int k=0; k<c; k++) {
+      for(int l=0; l<d; l++) {
+        cout << "matriks 2 ["<<k<<"]["<<l<<"] : ";
+        cin >> matriks2 [k][l];
+      }
+    }
+
+    //hasil inputan matriks
+    cout << endl << "hasil matriks 1" << endl;
+    for(int i=0; i<a; i++) {
+      for(int j=0; j<b; j++) {
+        cout << matriks1[i][j]<<" ";
+      }
+      cout << endl;
+    }
+    cout << endl << "hasil matriks 2" << endl;
+    for(int k=0; k<c; k++) {
+      for(int l=0; l<d; l++) {
+        cout << matriks2[k][l]<<" ";
+      }
+      cout << endl;
+    }
+
+    //Penjumlahan matriks
+      for (int i=0; i<a; i++) {
+        for (int j=0; j<b; j++) {
+          penjumlahan[i][j] = matriks1[i][j] + matriks2[i][j];
+        }
+      }
+
+    //hasil Penjumlahan matriks
+    cout << "\nHasil Penjumlahan Matriks:\n";
+    for (int i=0; i < b; i++) {
+      for (int j=0; j < a; j++) {
+        cout << penjumlahan[i][j] << " ";
+      }
+      cout << "\n";
+    }
+  } else {
+    cout << "\nPenjumlahan matriks tidak dapat dilakukan!\n";
+  }
+
+  cout << "\nKembali ke menu sebelumnya? (y/n) : ";
+  cin >> kembali;
+}
+
+//pengurangan matriks
+void penguranganMatriks() {
+  int a, b, c, d;
+  int matriks1[10][10], matriks2[10][10], pengurangan[10][10];
+
+  cout << "\033[0;0H\033[2J"; // alternatif system("cls");
+  cout << "Pengurangan 2 Matriks\n\n";
+
+  //input ukuran matriks
+  cout << "\nMatriks 1 dengan ukuran a * b" << endl;
+  cout << "Input nilai a : "; cin >> a;
+  cout << "Input nilai b : "; cin >> b;
+  cout << endl;
+  cout << "Matriks 2 dengan ukuran c * d" << endl;
+  cout << "Input nilai c : "; cin >> c;
+  cout << "Input nilai d : "; cin >> d;
+
+  if (a==c && b==d) {
+    //input nilai matriks
+    cout << "\ninput matriks 1" << endl;
+    for(int i=0; i<a; i++) {
+      for(int j=0; j<b; j++) {
+        cout << "matriks 1 ["<<i<<"]["<<j<<"] : ";
+        cin >> matriks1 [i][j];
+      }
+    }
+    cout << endl << "input matriks 2" << endl;
+    for(int k=0; k<c; k++) {
+      for(int l=0; l<d; l++) {
+        cout << "matriks 2 ["<<k<<"]["<<l<<"] : ";
+        cin >> matriks2 [k][l];
+      }
+    }
+
+    //hasil inputan matriks
+    cout << endl << "hasil matriks 1" << endl;
+    for(int i=0; i<a; i++) {
+      for(int j=0; j<b; j++) {
+        cout << matriks1[i][j]<<" ";
+      }
+      cout << endl;
+    }
+    cout << endl << "hasil matriks 2" << endl;
+    for(int k=0; k<c; k++) {
+      for(int l=0; l<d; l++) {
+        cout << matriks2[k][l]<<" ";
+      }
+      cout << endl;
+    }
+
+    //Pengurangan matriks
+      for (int i=0; i<a; i++) {
+        for (int j=0; j<b; j++) {
+          pengurangan[i][j] = matriks1[i][j] - matriks2[i][j];
+        }
+      }
+
+    //hasil Pengurangan matriks
+    cout << "\nHasil Pengurangan Matriks:\n";
+    for (int i=0; i < b; i++) {
+      for (int j=0; j < a; j++) {
+        cout << pengurangan[i][j] << " ";
+      }
+      cout << "\n";
+    }
+  } else {
+    cout << "\nPengurangan matriks tidak dapat dilakukan!\n";
+  }
+
+  cout << "\nKembali ke menu sebelumnya? (y/n) : ";
+  cin >> kembali;
+}
+
+//transpose matriks
+void transposeMatriks() {
+  int a, b;
+  int matriks[10][10], transpose[10][10];
+
+  cout << "\033[0;0H\033[2J"; // alternatif system("cls");
+  cout << "Transpose Matriks\n\n";
+  
+  //input ukuran matriks
+  cout << "Matriks dengan ukuran a * b" << endl;
+  cout << "Input nilai a : "; cin >> a;
+  cout << "Input nilai b : "; cin >> b;
+
+  //input nilai matriks
+  cout << "\ninput matriks" << endl;
+  for(int i=0; i<a; i++) {
+    for(int j=0; j<b; j++) {
+      cout << "matriks ["<<i<<"]["<<j<<"] : ";
+      cin >> matriks[i][j];
+    }
+  }
+
+  //hasil inputan matriks
+  cout << endl << "hasil matriks" << endl;
+  for(int i=0; i<a; i++) {
+    for(int j=0; j<b; j++) {
+      cout << matriks[i][j]<<" ";
+    }
+    cout << endl;
+  }
+
+  //transpose matriks
+  for (int i = 0; i < a; i++) {
+    for (int j = 0; j < b; j++) {
+      transpose[j][i] = matriks[i][j];
+    }
+  }
+
+  //hasil transpose matriks
+  cout << "\nHasil Transpose Matriks:\n";
+  for (int i = 0; i < b; i++) {
+    for (int j = 0; j < a; j++) {
+      cout << transpose[i][j] << " ";
+    }
+    cout << "\n";
   }
 
   cout << "\nKembali ke menu sebelumnya? (y/n) : ";
@@ -505,13 +703,13 @@ menuUtama:
         perkalianMatriks();
         break;
       case 2:
-        // penjumlahanMatriks();
+        penjumlahanMatriks();
         break;
       case 3:
-        // penguranganMatriks();
+        penguranganMatriks();
         break;
       case 4:
-        // transposeMatriks();
+        transposeMatriks();
         break;
       case 5:
         goto menuUtama;
