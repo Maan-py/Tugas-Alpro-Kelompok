@@ -282,7 +282,7 @@ void perkalianMatriks() {
 
   cout << endl;
 
-  if (a * b == c * d) {
+  if (b == c) {
     cout << "Input Matriks M" << endl;
     for (int i = 0; i < a; i++) {
       for (int j = 0; j < b; j++) {
